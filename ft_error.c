@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/21 14:31:07 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/02/21 17:26:27 by ksaffron         ###   ########.fr       */
+/*   Created: 2022/02/21 15:04:04 by ksaffron          #+#    #+#             */
+/*   Updated: 2022/02/21 15:14:07 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdio.h>
-
-void	ft_error(void);
-
-#endif
+void	ft_error(void)
+{
+	write(1, "Error\n", 6);
+	exit(0);
+}

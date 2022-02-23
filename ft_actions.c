@@ -1,27 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_actions.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/21 14:31:07 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/02/23 20:09:37 by ksaffron         ###   ########.fr       */
+/*   Created: 2022/02/23 18:31:39 by ksaffron          #+#    #+#             */
+/*   Updated: 2022/02/23 18:35:10 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include "./libft/libft.h"
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdio.h>
-
-void	ft_error(void);
-void	ft_input_into_stack(t_list **stack_a, int argc, char **argv);
-void	ft_is_valid(int argc, char **argv);
-void	ft_check_duplicates(char **argv);
-void	ft_check_range(char **argv);
-
-#endif
+void	ft_sa(t_list **stack_a)
+{
+}

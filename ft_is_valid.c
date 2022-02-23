@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 20:18:52 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/02/23 16:18:19 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/02/23 18:25:15 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,10 @@ void	ft_is_valid(int argc, char **argv)
 		j = 0;
 		while (argv[i][j])
 		{
-			if (!((ft_isdigit(argv[i][j])) || argv[i][j] == ' ' ||
-			(argv[i][j] == '-' && ft_isdigit(argv[i][j + 1]))))
+			if ((!ft_isdigit(argv[i][j]) && argv[i][j] != ' ' &&
+			argv[i][j] != '-') || (argv[i][j] != ' ' &&
+			argv[i][j + 1] == '-') || (argv[i][j] == '-' &&
+			!ft_isdigit(argv[i][j + 1])))
 				ft_error();
 			j++;
 		}

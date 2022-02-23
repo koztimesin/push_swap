@@ -6,7 +6,7 @@
 #    By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/21 14:30:43 by ksaffron          #+#    #+#              #
-#    Updated: 2022/02/22 18:42:56 by ksaffron         ###   ########.fr        #
+#    Updated: 2022/02/22 20:32:13 by ksaffron         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = push_swap
 FLAGS = -Wall -Wextra -Werror
 
 HEADER = push_swap.h
-SOURCE = ft_error.c push_swap.c ft_input_into_stack.c
+SOURCE = ft_error.c push_swap.c ft_input_into_stack.c ft_is_valid.c
 OBJECTS = $(SOURCE:.c=.o)
 LIBFT_SOURCE = ./libft/
 LIBFT = libft.a

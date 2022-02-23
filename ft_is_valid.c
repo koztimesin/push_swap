@@ -1,25 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_is_valid.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/21 14:31:07 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/02/23 16:05:01 by ksaffron         ###   ########.fr       */
+/*   Created: 2022/02/22 20:18:52 by ksaffron          #+#    #+#             */
+/*   Updated: 2022/02/23 16:18:19 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include "./libft/libft.h"
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdio.h>
+void	ft_is_valid(int argc, char **argv)
+{
+	int	len;
+	int	i;
+	int	j;
 
-void	ft_error(void);
-void	ft_input_into_stack(t_list **stack_a, int argc, char **argv);
-void	ft_is_valid(int argc, char **argv);
-
-#endif
+	i = 1;
+	if (argc < 2)
+		ft_error();
+	while (i < argc)
+	{
+		len = ft_strlen(argv[i]);
+		if (!(len))
+			ft_error();
+		j = 0;
+		while (argv[i][j])
+		{
+			if (!((ft_isdigit(argv[i][j])) || argv[i][j] == ' ' ||
+			(argv[i][j] == '-' && ft_isdigit(argv[i][j + 1]))))
+				ft_error();
+			j++;
+		}
+		i++;
+	}
+}

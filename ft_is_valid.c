@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 20:18:52 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/02/23 20:39:16 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/03/04 16:33:01 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,52 +40,47 @@ void	ft_is_valid(int argc, char **argv)
 	}
 }
 
-void	ft_check_duplicates(char **argv)
+void	ft_check_duplicate(t_list **stack_a)
 {
-	int	i;
-	int	j;
+	t_list	*temp;
+	t_list	*musor;
 
-	i = 0;
-	while (argv[++i])
+	temp = *stack_a;
+	while (temp)
 	{
-		j = 0;
-		while (argv[++j])
-			if ((ft_atoi(argv[i]) == ft_atoi(argv[j]) && i != j))
+		musor = temp->next;
+		while (musor)
+		{
+			if (ft_atoi(temp->content) == ft_atoi(musor->content))
 				ft_error();
+			musor = musor->next;
+		}
+		temp = temp->next;
 	}
 }
 
-static long	ft_new_atoi(char *argv)
+void	ft_check_range(t_list **stack_a)
 {
-	long		num;
-	int			minus;
-	int			i;
+	t_list	*temp;
+	int		num;
+	int		num_length;
 
-	i = 0;
-	minus = 1;
-	if (argv[i] == '-')
+	temp = *stack_a;
+	while (temp)
 	{
-		minus = -1;
-		i++;
-	}
-	while (argv[i] >= '0' && argv[i] <= '9')
-	{
-		num = (num * 10) + (argv[i] - '0');
-		i++;
-	}
-	return (num * minus);
-}
-
-void	ft_check_range(char **argv)
-{
-	int		i;
-	long	num;
-
-	i = 0;
-	while (argv[++i])
-	{
-		num = ft_new_atoi(argv[i]);
-		if (num > 2147483647 || num < -2147483648)
+		num_length = 0;
+		num = ft_atoi(temp->content);
+		if (num == 0)
+			num_length++;
+		if (num < 0)
+			num_length++;
+		while (num)
+		{
+			num /= 10;
+			num_length++;
+		}
+		if ((int)ft_strlen(temp->content) != num_length)
 			ft_error();
+		temp = temp->next;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 14:31:07 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/03/04 16:30:55 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/03/04 20:24:50 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,7 @@ void	ft_input_into_stack(t_list **stack_a, int argc, char **argv);
 void	ft_is_valid(int argc, char **argv);
 void	ft_check_duplicate(t_list **stack_a);
 void	ft_check_range(t_list **stack_a);
+void	ft_sa(t_list **stack_a);
+int		ft_is_stack_sorted(t_list **stack_a);
 
 #endif

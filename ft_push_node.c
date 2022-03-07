@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:41:53 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/03/07 20:00:53 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/03/07 20:06:21 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void	ft_push_node(t_list **src, t_list **dest)
 	*src = (*src)->next;
 	temp->next = NULL;
 	ft_lstadd_front(dest, ft_lstnew(ft_strdup(temp->content)));
-	ft_lstclear(temp, free);
+	ft_lstclear(&temp, free);
 }
 
 void	ft_pa(t_list **stack_a, t_list **stack_b)

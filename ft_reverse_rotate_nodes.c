@@ -1,52 +1,58 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rotate_node.c                                   :+:      :+:    :+:   */
+/*   ft_reverse_rotate_nodes.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/07 20:14:32 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/03/09 15:51:45 by ksaffron         ###   ########.fr       */
+/*   Created: 2022/03/09 15:55:56 by ksaffron          #+#    #+#             */
+/*   Updated: 2022/03/09 17:48:48 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	ft_rotate_node(t_list **head)
+static void	ft_reverse_rotate_nodes(t_list **head)
 {
+	t_list	*new;
 	t_list	*temp;
 
-	temp = *head;
-	*head = (*head)->next;
+	new = *head;
+	temp = NULL;
+	while (new->next)
+	{
+		temp = new;
+		new = new->next;
+	}
 	temp->next = NULL;
-	ft_lstadd_back(head, ft_lstnew(ft_strdup(temp->content)));
-	ft_lstclear(&temp, free);
+	new->next = *head;
+	*head = new;
 }
 
-void	ft_ra(t_list **stack_a)
+void	ft_rra(t_list **stack_a)
 {
 	if (*stack_a && (*stack_a)->next)
 	{
-		ft_rotate_node(stack_a);
-		write(1, "ra\n", 3);
+		ft_reverse_rotate_nodes(stack_a);
+		write (1, "rra\n", 4);
 	}
 }
 
-void	ft_rb(t_list **stack_b)
+void	ft_rrb(t_list **stack_b)
 {
 	if (*stack_b && (*stack_b)->next)
 	{
-		ft_rotate_node(stack_b);
-		write(1, "rb\n", 3);
+		ft_reverse_rotate_nodes(stack_b);
+		write (1, "rrb\n", 4);
 	}
 }
 
-void	ft_rr(t_list **stack_a, t_list **stack_b)
+void	ft_rrr(t_list **stack_a, t_list **stack_b)
 {
 	if (*stack_a && (*stack_a)->next && *stack_b && (*stack_b)->next)
 	{
-		ft_rotate_node(stack_a);
-		ft_rotate_node(stack_b);
-		write(1, "rr\n", 3);
+		ft_reverse_rotate_nodes(stack_a);
+		ft_reverse_rotate_nodes(stack_b);
+		write (1, "rrr\n", 4);
 	}
 }

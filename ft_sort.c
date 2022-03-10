@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 19:59:43 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/03/05 14:41:13 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/03/10 22:00:30 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,3 +29,43 @@ int	ft_is_stack_sorted(t_list **stack_a)
 	}
 	return (1);
 }
+
+// t_list	*ft_mid_node(t_list **stack_a)
+// {
+// 	t_list	*mid;
+// 	t_list	*temp;
+
+// 	temp = *stack_a;
+// 	mid = *stack_a;
+// 	while (trash && trash->next)
+// 	{
+// 		temp = temp->next;
+// 		trash = trash->next->next;
+// 	}
+// 	return (temp);
+// }
+
+// void	ft_merge_sort(t_list **stack_a)
+// {
+// 	t_list	*mid;
+
+// 	mid = ft_mid_node(stack_a);
+// }
+
+// void	ft_push_all_into_b(t_list **stack_a, t_list **stack_b, int median)
+// {
+// 	t_list	*min;
+// 	t_list	*max;
+// 	t_list	*avg;
+// 	t_list	*head;
+// 	int		i;
+
+// 	i = 1;
+// 	head = *stack_a;
+// 	min = *stack_a;
+// 	avg = *stack_a;
+// 	max = ft_lstlast(*stack_a);
+// 	while (i++ <= median)
+// 		avg = avg->next;
+// 	while ()
+// }

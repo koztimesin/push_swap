@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 14:30:57 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/03/11 16:19:57 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/03/11 18:01:23 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,15 @@ int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
-	int		stack_a_size;
-	t_list	*temp;
 
 	stack_a = NULL;
 	stack_b = NULL;
 	ft_input_into_stack(&stack_a, argc, argv);
-	stack_a_size = ft_lstsize(stack_a);
-	temp = stack_a;
-	ft_merge_sort(&temp);
-	while (temp)
+	ft_push_all_into_b(&stack_a, &stack_b);
+	while (stack_b)
 	{
-		printf("%s\n", temp->content);
-		//printf("%p\n", temp->next);
-		temp = temp->next;
+		printf("%s", stack_b->content);
+		stack_b = stack_b->next;
 	}
 	ft_lstclear(&stack_a, free);
 }

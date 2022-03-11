@@ -6,12 +6,12 @@
 #    By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/21 14:30:43 by ksaffron          #+#    #+#              #
-#    Updated: 2022/03/10 22:48:32 by ksaffron         ###   ########.fr        #
+#    Updated: 2022/03/11 16:36:34 by ksaffron         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
-FLAGS = -Wall -Wextra -Werror -g -fsanitize=address
+FLAGS = -Wall -Wextra -Werror #-g -fsanitize=address
 CC = gcc
 
 HEADER = push_swap.h

@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 14:30:57 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/03/11 18:01:23 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/03/12 18:55:44 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	main(int argc, char **argv)
 		stack_b = stack_b->next;
 	}
 	ft_lstclear(&stack_a, free);
+	ft_lstclear(&stack_b, free);
 }
 
 // int	main(int argc, char **argv)

@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 19:59:43 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/03/11 18:06:22 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/03/12 18:58:43 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,20 +50,17 @@ void	ft_push_all_into_b(t_list **stack_a, t_list **stack_b)
 	int		min;
 	int		max;
 	int		mid;
-	t_list	*head;
 	t_list	*temp;
 
-	head = *stack_a;
-	ft_merge_sort(stack_a);
 	temp = *stack_a;
-	min = ft_atoi((*stack_a)->content);
-	max = ft_atoi(ft_lstlast(*stack_a)->content);
-	mid = ft_atoi(ft_mid_node(stack_a)->content);
+	ft_find_integers(&min, &mid, &max, *stack_a);
 	while (temp)
 	{
-		if (ft_atoi(temp->content) < mid)
+		if (ft_atoi(temp->content) < mid && ft_atoi(temp->content) != min
+			&& ft_atoi(temp->content) != mid)
 			ft_pb(&temp, stack_b);
-		else if (ft_atoi(temp->content) > mid)
+		else if (ft_atoi(temp->content) > mid && ft_atoi(temp->content) != max
+			&& ft_atoi(temp->content) != mid)
 		{
 			ft_pb(&temp, stack_b);
 			ft_rb(stack_b);

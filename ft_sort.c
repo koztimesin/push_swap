@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 19:59:43 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/03/12 18:58:43 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/03/14 18:00:04 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,41 +30,30 @@ int	ft_is_stack_sorted(t_list **stack_a)
 	return (1);
 }
 
-t_list	*ft_mid_node(t_list **stack_a)
-{
-	t_list	*mid;
-	t_list	*temp;
-
-	temp = *stack_a;
-	mid = *stack_a;
-	while (temp && temp->next)
-	{
-		mid = mid->next;
-		temp = temp->next->next;
-	}
-	return (mid);
-}
-
 void	ft_push_all_into_b(t_list **stack_a, t_list **stack_b)
 {
 	int		min;
 	int		max;
 	int		mid;
-	t_list	*temp;
+	int		size;
 
-	temp = *stack_a;
+	size = ft_lstsize(*stack_a);
+	printf("SIZE LST --- %d\n", size);
 	ft_find_integers(&min, &mid, &max, *stack_a);
-	while (temp)
+	while (size > 2)
 	{
-		if (ft_atoi(temp->content) < mid && ft_atoi(temp->content) != min
-			&& ft_atoi(temp->content) != mid)
-			ft_pb(&temp, stack_b);
-		else if (ft_atoi(temp->content) > mid && ft_atoi(temp->content) != max
-			&& ft_atoi(temp->content) != mid)
+		if (ft_atoi((*stack_a)->content) != min
+			&& ft_atoi((*stack_a)->content) != max)
 		{
-			ft_pb(&temp, stack_b);
-			ft_rb(stack_b);
+			if (ft_atoi((*stack_a)->content) > mid)
+			{
+				ft_pb(stack_a, stack_b);
+				ft_rb(stack_b);
+			}
+			else
+				ft_pb(stack_a, stack_b);
+			size--;
 		}
-		temp = temp->next;
+		ft_ra(stack_a);
 	}
 }

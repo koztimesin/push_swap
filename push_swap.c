@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 14:30:57 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/03/14 17:48:37 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/03/14 18:44:15 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,17 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	ft_input_into_stack(&stack_a, argc, argv);
 	ft_push_all_into_b(&stack_a, &stack_b);
-	while (stack_a)
-	{
-		printf("ETO_A --- %s\n", stack_a->content);
-		stack_a = stack_a->next;
-	}
-	while (stack_b)
-	{
-		printf("ETO_B --- %s\n", stack_b->content);
-		stack_b = stack_b->next;
-	}
+	ft_push_all_into_a(&stack_a, &stack_b);
+	// while (stack_a)
+	// {
+	// 	printf("ETO_A --- %s\n", stack_a->content);
+	// 	stack_a = stack_a->next;
+	// }
+	// while (stack_b)
+	// {
+	// 	printf("ETO_B --- %s\n", stack_b->content);
+	// 	stack_b = stack_b->next;
+	// }
 	// ft_lstclear(&stack_a, free);
 	// ft_lstclear(&stack_b, free);
 }

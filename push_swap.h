@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 14:31:07 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/03/14 18:00:31 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/03/14 18:36:46 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,6 @@ void	ft_rrr(t_list **stack_a, t_list **stack_b);
 // void	ft_merge_sort(t_list *stack);
 void	ft_push_all_into_b(t_list **stack_a, t_list **stack_b);
 void	ft_find_integers(int *min, int *mid, int *max, t_list *stack);
+void	ft_push_all_into_a(t_list **stack_a, t_list **stack_b);
 
 #endif

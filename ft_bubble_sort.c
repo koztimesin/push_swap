@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 18:22:08 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/03/12 18:55:38 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/03/14 18:36:14 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,11 @@ void	ft_find_integers(int *min, int *mid, int *max, t_list *stack)
 	i = -1;
 	while (++i < size - 1)
 		ft_bubble_sort(arr, &i);
-	*min = arr[0];
-	*max = arr[size - 1];
-	*mid = arr[size / 2];
+	if (min)
+		*min = arr[0];
+	if (max)
+		*max = arr[size - 1];
+	if (mid)
+		*mid = arr[size / 2];
 	free(arr);
 }

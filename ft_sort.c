@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 19:59:43 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/03/14 18:37:31 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/03/18 17:29:15 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,8 @@ void	ft_push_all_into_b(t_list **stack_a, t_list **stack_b)
 				ft_pb(stack_a, stack_b);
 			size--;
 		}
-		ft_ra(stack_a);
+		else
+			ft_ra(stack_a);
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 19:59:43 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/03/21 17:59:32 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/03/22 14:51:21 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,14 +58,14 @@ void	ft_push_all_into_b(t_list **stack_a, t_list **stack_b)
 	}
 }
 
-static	void	ft_final(t_list **stack_a)
-{
-	int	min;
+// static	void	ft_final(t_list **stack_a)
+// {
+// 	int	min;
 
-	ft_find_integers(&min, NULL, NULL, *stack_a);
-	while (ft_atoi((*stack_a)->content) != min)
-		ft_ra(stack_a);
-}
+// 	ft_find_integers(&min, NULL, NULL, *stack_a);
+// 	while (ft_atoi((*stack_a)->content) != min)
+// 		ft_ra(stack_a);
+// }
 
 void	ft_push_all_into_a(t_list **stack_a, t_list **stack_b)
 {
@@ -86,5 +86,4 @@ void	ft_push_all_into_a(t_list **stack_a, t_list **stack_b)
 		else
 			ft_ra(stack_a);
 	}
-	ft_final(stack_a);
 }

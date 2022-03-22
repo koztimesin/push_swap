@@ -6,22 +6,20 @@
 #    By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/21 14:30:43 by ksaffron          #+#    #+#              #
-#    Updated: 2022/03/19 18:04:46 by ksaffron         ###   ########.fr        #
+#    Updated: 2022/03/22 16:22:56 by ksaffron         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
-FLAGS = -Wall -Wextra -Werror #-g -fsanitize=address
+FLAGS = -Wall -Wextra -Werror -g -fsanitize=address
 CC = gcc
 
 HEADER = push_swap.h
 
-SOURCE = ft_error.c push_swap.c ft_input_into_stack.c \
+SOURCE =	ft_error.c push_swap.c ft_input_into_stack.c \
 			ft_is_valid.c ft_swap_nodes.c ft_sort.c \
 			ft_push_node.c ft_rotate_node.c ft_reverse_rotate_nodes.c \
-			ft_bubble_sort.c \
-			sort_three.c \
-			ft_hrenznaet.c \
+			ft_bubble_sort.c sort_three.c \
 			#ft_merge_sort.c
 
 OBJECTS = $(SOURCE:.c=.o)

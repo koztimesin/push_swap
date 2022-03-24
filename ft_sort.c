@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 19:59:43 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/03/22 14:51:21 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/03/24 14:57:08 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,14 +58,34 @@ void	ft_push_all_into_b(t_list **stack_a, t_list **stack_b)
 	}
 }
 
-// static	void	ft_final(t_list **stack_a)
-// {
-// 	int	min;
+void	ft_final(t_list **stack_a)
+{
+	int	min;
+	int	actions;
+	int	size;
+	t_list	*temp;
 
-// 	ft_find_integers(&min, NULL, NULL, *stack_a);
-// 	while (ft_atoi((*stack_a)->content) != min)
-// 		ft_ra(stack_a);
-// }
+	temp = *stack_a;
+
+	ft_find_integers(&min, NULL, NULL, *stack_a);
+	while (temp)
+	{
+		if (ft_atoi(temp->content) == min)
+			break ;
+		actions++;
+		temp = temp->next;
+	}
+	size = ft_lstsize(*stack_a);
+	if (actions >= size / 2)
+		while (actions--)
+			ft_ra(stack_a);
+	else
+	{
+		actions = size - actions;
+		while (actions--)
+			ft_rra(stack_a);
+	}
+}
 
 void	ft_push_all_into_a(t_list **stack_a, t_list **stack_b)
 {

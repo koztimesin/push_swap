@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 19:59:43 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/03/24 14:57:08 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/03/24 16:21:06 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,50 +60,26 @@ void	ft_push_all_into_b(t_list **stack_a, t_list **stack_b)
 
 void	ft_final(t_list **stack_a)
 {
-	int	min;
-	int	actions;
-	int	size;
-	t_list	*temp;
+	int		min;
 
-	temp = *stack_a;
-
-	ft_find_integers(&min, NULL, NULL, *stack_a);
-	while (temp)
+	if (!ft_is_stack_sorted(*stack_a))
 	{
-		if (ft_atoi(temp->content) == min)
-			break ;
-		actions++;
-		temp = temp->next;
-	}
-	size = ft_lstsize(*stack_a);
-	if (actions >= size / 2)
-		while (actions--)
-			ft_ra(stack_a);
-	else
-	{
-		actions = size - actions;
-		while (actions--)
-			ft_rra(stack_a);
+		ft_find_integers(&min, NULL, NULL, *stack_a);
+		if (ft_lstsize(ft_min(*stack_a)) > ft_lstsize(*stack_a) / 2)
+			while (ft_atoi((*stack_a)->content) != min)
+				ft_ra(stack_a);
+		else
+			while (ft_atoi((*stack_a)->content) != min)
+				ft_rra(stack_a);
 	}
 }
 
 void	ft_push_all_into_a(t_list **stack_a, t_list **stack_b)
 {
-	int		i;
-	int		j;
-
-	i = ft_lstsize(*stack_a) + ft_lstsize(*stack_b);
-	j = 2;
-	while (j != i)
+	while (*stack_b)
 	{
-		if (ft_atoi((*stack_a)->content) > ft_atoi((*stack_b)->content)
-			&& ft_atoi(ft_lstlast(*stack_a)->content) \
-			< ft_atoi((*stack_b)->content))
-		{
-			ft_pa(stack_a, stack_b);
-			j++;
-		}
-		else
-			ft_ra(stack_a);
+		ft_two_nodes(stack_a, stack_b,
+			get_best_node(stack_a, stack_b));
+		ft_pa(stack_a, stack_b);
 	}
 }

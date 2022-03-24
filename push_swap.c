@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 14:30:57 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/03/24 15:19:18 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/03/24 16:04:52 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,21 +27,12 @@ int	main(int argc, char **argv)
 		else if (ft_lstsize(stack_a) == 5)
 		{
 			ft_push_all_into_b(&stack_a, &stack_b);
-			if ((stack_a) == ft_min(stack_a))
-				ft_rr(&stack_a, &stack_b);
-			ft_sort_five(&stack_b);
-			while (stack_b)
-				ft_pa(&stack_a, &stack_b);
-			ft_rra(&stack_a);
+			ft_sort_five(&stack_a, &stack_b);
 		}
 		else
 		{
 			ft_push_all_into_b(&stack_a, &stack_b);
-			while (stack_b)
-			{
-				ft_two_nodes(&stack_a, &stack_b, get_best_node(&stack_a, &stack_b));
-				ft_pa(&stack_a, &stack_b);
-			}
+			ft_push_all_into_a(&stack_a, &stack_b);
 		}
 		ft_final(&stack_a);
 	}

@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 16:41:25 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/03/24 15:13:48 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/03/24 15:25:43 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ t_list	*get_best_node(t_list **stack_a, t_list **stack_b)
 	while (temp)
 	{
 		actions = actions_sum(stack_a, stack_b, temp);
-		if (actions < last_actions || last_actions == - 1)
+		if (actions < last_actions || last_actions == -1)
 		{
 			last_actions = actions;
 			result = temp;

@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 20:18:52 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/03/04 16:33:01 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/03/26 18:18:11 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_is_valid(int argc, char **argv)
 
 	i = 1;
 	if (argc < 2)
-		ft_error();
+		exit(1);
 	while (i < argc)
 	{
 		len = ft_strlen(argv[i]);
@@ -43,17 +43,17 @@ void	ft_is_valid(int argc, char **argv)
 void	ft_check_duplicate(t_list **stack_a)
 {
 	t_list	*temp;
-	t_list	*musor;
+	t_list	*trash;
 
 	temp = *stack_a;
 	while (temp)
 	{
-		musor = temp->next;
-		while (musor)
+		trash = temp->next;
+		while (trash)
 		{
-			if (ft_atoi(temp->content) == ft_atoi(musor->content))
+			if (ft_atoi(temp->content) == ft_atoi(trash->content))
 				ft_error();
-			musor = musor->next;
+			trash = trash->next;
 		}
 		temp = temp->next;
 	}

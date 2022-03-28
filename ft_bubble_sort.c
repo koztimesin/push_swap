@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 18:22:08 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/03/27 15:38:17 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/03/27 19:23:08 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	ft_find_integers(int *min, int *mid, int *max, t_list *stack)
 	size = ft_lstsize(stack);
 	arr = malloc(sizeof(int) * size);
 	if (!arr)
-		return (NULL);
+		return ;
 	while (i < size && stack)
 	{
 		arr[i++] = ft_atoi(stack->content);

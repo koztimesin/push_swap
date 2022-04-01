@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 17:20:29 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/04/01 18:44:57 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/04/01 19:27:47 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,9 @@ static void	ft_read(t_list **stack_a, t_list **stack_b)
 		str = get_next_line(0);
 		if (!str)
 			return ;
-		if (!str || *str == '\n')
-			ft_error();
-		else
-			ft_action(stack_a, stack_b, str);
+		ft_action(stack_a, stack_b, str);
+		if (str)
+			free(str);
 	}
 }
 

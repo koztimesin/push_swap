@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 17:20:29 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/04/01 19:27:47 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/04/01 20:05:25 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,10 @@ static void	ft_action(t_list **stack_a, t_list **stack_b, char *str)
 	else if (!ft_strncmp(str, "rrr\n", ft_strlen(str)))
 		ft_rrr_b(stack_a, stack_b);
 	else
+	{
+		free(str);
 		ft_error();
+	}
 }
 
 static void	ft_read(t_list **stack_a, t_list **stack_b)

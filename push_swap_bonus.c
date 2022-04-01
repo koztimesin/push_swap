@@ -6,7 +6,7 @@
 /*   By: ksaffron <ksaffron@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 17:20:29 by ksaffron          #+#    #+#             */
-/*   Updated: 2022/04/01 18:26:45 by ksaffron         ###   ########.fr       */
+/*   Updated: 2022/04/01 18:44:57 by ksaffron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,8 +83,10 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	ft_input_into_stack(&stack_a, argc, argv);
+	if (!ft_lstsize(stack_a))
+		exit(1);
 	ft_read(&stack_a, &stack_b);
-	if (ft_is_stack_sorted_pb(stack_a))
+	if (ft_is_stack_sorted_pb(stack_a) && !ft_lstsize(stack_b))
 		ft_putstr_fd("OK\n", 1);
 	else
 		ft_putstr_fd("KO\n", 1);
